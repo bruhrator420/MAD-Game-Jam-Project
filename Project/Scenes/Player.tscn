@@ -37,20 +37,20 @@ animations = [ {
 "frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
 "name": "attack",
-"speed": 5.0
+"speed": 10.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 5.0
-height = 32.0
+radius = 3.0
+height = 22.0
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
-animation = "attack"
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -2, 3 )
+position = Vector2( -2, 2 )
 shape = SubResource( 1 )

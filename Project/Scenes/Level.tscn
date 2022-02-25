@@ -20,7 +20,7 @@ scale = Vector2( 22.4063, 1 )
 texture = ExtResource( 2 )
 
 [node name="Sprite2" type="Sprite" parent="StaticBody2D"]
-position = Vector2( -151, -205.547 )
+position = Vector2( 46, -205.547 )
 rotation = 1.5708
 scale = Vector2( 6.42335, 1 )
 texture = ExtResource( 2 )
@@ -37,7 +37,7 @@ scale = Vector2( 6.84375, 1 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( -139, -191.75 )
+position = Vector2( 58, -191.75 )
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
@@ -47,13 +47,14 @@ shape = SubResource( 2 )
 [node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
 position = Vector2( 367, 228 )
 
-[node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 427, 263 )
+current = true
+zoom = Vector2( 0.2, 0.2 )
 limit_left = 0
 limit_top = 28
 limit_right = 1432
 limit_bottom = 476
-limit_smoothed = true
-smoothing_enabled = true
 drag_margin_left = 1.0
 drag_margin_right = 1.0
 editor_draw_limits = true
