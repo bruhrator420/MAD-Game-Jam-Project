@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 104.84, 21.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 20, 217.25 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 183, 410 )
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+position = Vector2( 532, -44 )
+scale = Vector2( 22.4063, 1 )
+texture = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="StaticBody2D"]
+position = Vector2( -151, -205.547 )
+rotation = 1.5708
+scale = Vector2( 6.42335, 1 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3" type="Sprite" parent="StaticBody2D"]
+position = Vector2( 452, -205.102 )
+rotation = 1.5708
+scale = Vector2( 6.40942, 1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 534.5, -56 )
+scale = Vector2( 6.84375, 1 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -139, -191.75 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 440, -200 )
+shape = SubResource( 2 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 367, 228 )
+
+[node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+limit_left = 0
+limit_top = 28
+limit_right = 1432
+limit_bottom = 476
+limit_smoothed = true
+smoothing_enabled = true
+drag_margin_left = 1.0
+drag_margin_right = 1.0
+editor_draw_limits = true
