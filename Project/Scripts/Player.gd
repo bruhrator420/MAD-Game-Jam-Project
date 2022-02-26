@@ -40,6 +40,9 @@ func _physics_process(delta):
 				motion.x = move_toward(motion.x, x_input * MAX_SPEED, ACCELERATION * delta)
 				sprite.flip_h = x_input < 0
 				sprite.play("walk")
+				$"Melee".position.x = abs($"Melee".position.x) * sign(x_input)
+				$"Use".position.x = abs($"Use".position.x) * sign(x_input)
+				$"CollisionShape2D".position.x = abs($"CollisionShape2D".position.x) * sign(x_input)
 			else:
 				sprite.play("default")
 				motion.x = lerp(motion.x, 0, FRICTION if is_on_floor() else AIR_RESISTANCE)
