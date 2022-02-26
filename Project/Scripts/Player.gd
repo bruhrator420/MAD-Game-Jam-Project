@@ -30,7 +30,6 @@ func _physics_process(delta):
 			if is_on_floor and Input.is_action_just_pressed("jump"):
 				motion.y = - JUMP_FORCE
 			elif Input.is_action_just_released("jump") and motion.y < - JUMP_FORCE / 2:
-				print(Input.is_action_just_released("jump") and motion.y < -JUMP_FORCE / 2)
 				motion.y = - JUMP_FORCE / 2
 			
 			if use:
