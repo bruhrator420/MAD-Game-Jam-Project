@@ -58,8 +58,11 @@ func damage(damage = 1, knockback = Vector2.ZERO):
 	if hp:
 		set_deferred("motion", knockback if knockback else Vector2(0, -100))
 	else:
-		# morte aqui
-		get_tree().paused = true
+		die()
+
+
+func die():
+	get_tree().paused = true
 
 
 func on_attack_animation_finished():
