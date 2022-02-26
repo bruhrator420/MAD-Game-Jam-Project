@@ -17,19 +17,26 @@ onready var melee = $"Melee"
 func _physics_process(delta):
 	var kick = Input.is_action_just_pressed("attack")
 	var x_input = Input.get_axis("ui_left", "ui_right")
+	var use = Input.is_action_just_pressed("use")
 	
 	if sprite.animation != "attack":
 		if kick:
 			sprite.play("attack")
 			melee.monitoring = true
 			sprite.connect("animation_finished", self, "on_attack_animation_finished", [], CONNECT_ONESHOT)
-		elif x_input:
-			motion.x = move_toward(motion.x, x_input * MAX_SPEED, ACCELERATION * delta)
-			sprite.flip_h = x_input < 0
-			sprite.play("walk")
 		else:
-			sprite.play("default")
-			motion.x = lerp(motion.x, 0, FRICTION if is_on_floor() else AIR_RESISTANCE)
+			if use:
+				var use_areas = $"Use".get_overlapping_areas()
+				if not use_areas.empty():
+					use_areas[0].use()
+			
+			if x_input:
+				motion.x = move_toward(motion.x, x_input * MAX_SPEED, ACCELERATION * delta)
+				sprite.flip_h = x_input < 0
+				sprite.play("walk")
+			else:
+				sprite.play("default")
+				motion.x = lerp(motion.x, 0, FRICTION if is_on_floor() else AIR_RESISTANCE)
 	else:
 		motion.x = lerp(motion.x, 0, FRICTION if is_on_floor() else AIR_RESISTANCE)
 	
