@@ -12,7 +12,7 @@ onready var floor_checker = $"FloorChecker"
 onready var sprite = $"AnimatedSprite"
 
 func _physics_process(delta):
-	if is_on_wall():#  or not floor_checker.is_colliding():
+	if is_on_wall() or not floor_checker.is_colliding():
 		direction *= -1
 		sprite.flip_h = not sprite.flip_h
 		motion.x = SPEED * direction
