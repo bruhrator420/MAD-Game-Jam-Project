@@ -7,18 +7,6 @@
 atlas = ExtResource( 1 )
 region = Rect2( 0, 32, 53, 32 )
 
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 32, 53, 32 )
-
-[sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 1 )
-region = Rect2( 53, 32, 53, 32 )
-
-[sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 1 )
-region = Rect2( 106, 32, 53, 32 )
-
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 53, 32 )
@@ -31,9 +19,24 @@ region = Rect2( 53, 0, 53, 32 )
 atlas = ExtResource( 1 )
 region = Rect2( 106, 0, 53, 32 )
 
+[sub_resource type="StreamTexture" id=18]
+load_path = "res://.import/Player.png-b2c065f608361c5ef203209a6fcc30ba.stex"
+
 [sub_resource type="AtlasTexture" id=17]
+atlas = SubResource( 18 )
+region = Rect2( 144, 0, 48, 32 )
+
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 1 )
-region = Rect2( 159, 0, 53, 32 )
+region = Rect2( 0, 32, 53, 32 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 1 )
+region = Rect2( 53, 32, 53, 32 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 1 )
+region = Rect2( 106, 32, 53, 32 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -42,15 +45,15 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
 "loop": true,
 "name": "attack",
 "speed": 10.0
+}, {
+"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=1]
@@ -58,10 +61,7 @@ radius = 3.0
 height = 22.0
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 5, 5 )
-
-[sub_resource type="RectangleShape2D" id=18]
-extents = Vector2( 4, 15.5 )
+extents = Vector2( 4.5, 5 )
 
 [node name="Player" type="KinematicBody2D" groups=["players"]]
 script = ExtResource( 2 )
@@ -70,7 +70,7 @@ script = ExtResource( 2 )
 frames = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -2, 2 )
+position = Vector2( 0, 2 )
 shape = SubResource( 1 )
 
 [node name="Melee" type="Area2D" parent="."]
@@ -90,7 +90,6 @@ monitorable = false
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Use"]
 position = Vector2( 0, -0.5 )
-shape = SubResource( 18 )
 
 [connection signal="body_entered" from="Melee" to="." method="_on_Melee_body_entered"]
 [connection signal="body_entered" from="Use" to="." method="_on_Melee_body_entered"]

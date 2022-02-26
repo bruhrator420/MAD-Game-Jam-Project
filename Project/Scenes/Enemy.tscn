@@ -31,7 +31,7 @@ animations = [ {
 extents = Vector2( 11.5, 11.5 )
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 12.5, 12.5 )
+extents = Vector2( 13.5, 12.5 )
 
 [node name="Enemy" type="KinematicBody2D" groups=["enemies"]]
 script = ExtResource( 2 )
@@ -39,6 +39,7 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -11 )
 frames = SubResource( 5 )
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -53,7 +54,7 @@ cast_to = Vector2( 0, 1 )
 position = Vector2( 0, -11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( -0.5, -0.5 )
+position = Vector2( 0.5, -0.5 )
 shape = SubResource( 7 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
