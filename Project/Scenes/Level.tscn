@@ -5,21 +5,21 @@
 [ext_resource path="res://Scenes/Enemy.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 715.92, 32 )
+extents = Vector2( 104.84, 21.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 32, 205.5 )
+extents = Vector2( 20, 217.25 )
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Enemy" parent="." instance=ExtResource( 3 )]
-position = Vector2( 554, 149 )
+position = Vector2( 486, 259 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 183, 410 )
 
 [node name="Sprite" type="Sprite" parent="StaticBody2D"]
-position = Vector2( 535, -46 )
+position = Vector2( 532, -44 )
 scale = Vector2( 22.4063, 1 )
 texture = ExtResource( 2 )
 
@@ -30,21 +30,22 @@ scale = Vector2( 6.42335, 1 )
 texture = ExtResource( 2 )
 
 [node name="Sprite3" type="Sprite" parent="StaticBody2D"]
-position = Vector2( 448, -205 )
+position = Vector2( 452, -205.102 )
 rotation = 1.5708
 scale = Vector2( 6.40942, 1 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 533.08, -46 )
+position = Vector2( 534.5, -56 )
+scale = Vector2( 6.84375, 1 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 46, -205.5 )
+position = Vector2( 58, -191.75 )
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 448, -204 )
+position = Vector2( 440, -200 )
 shape = SubResource( 2 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
