@@ -39,9 +39,9 @@ func _on_PlayerDetector_body_exited(body):
 [sub_resource type="GDScript" id=4]
 script/source = "extends Area2D
 
+
 func use():
-	# use code here
-	pass
+	get_tree().change_scene(\"res://Scenes/1.tscn\")
 "
 
 [sub_resource type="RectangleShape2D" id=3]
