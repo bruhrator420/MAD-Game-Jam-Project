@@ -6,6 +6,7 @@ const FRICTION = 0.25
 const AIR_RESISTANCE = 0.02
 const JUMP_FORCE = 275
 
+var hp = 3
 var motion = Vector2.ZERO
 var gravity = (ProjectSettings.get_setting("physics/2d/default_gravity") *
 		ProjectSettings.get_setting("physics/2d/default_gravity_vector"))
@@ -42,6 +43,15 @@ func _physics_process(delta):
 			motion.y = -JUMP_FORCE/2
 	
 	motion = move_and_slide(motion, Vector2.UP)
+
+
+func damage(damage = 1, knockback = Vector2.ZERO):
+	hp -= damage
+	if hp:
+		set_deferred("motion", knockback if knockback else Vector2(0, -100))
+	else:
+		# morte aqui
+		get_tree().paused = true
 
 
 func on_attack_animation_finished():

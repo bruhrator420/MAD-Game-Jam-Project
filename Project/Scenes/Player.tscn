@@ -56,7 +56,7 @@ height = 22.0
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 4.5, 5 )
 
-[node name="KinematicBody2D" type="KinematicBody2D"]
+[node name="KinematicBody2D" type="KinematicBody2D" groups=["players"]]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
