@@ -15,3 +15,9 @@ func _unhandled_input(event):
 		time = "day" if time == "night" else "night"
 		emit_signal("night", time)
 		print(time)
+
+
+func _on_Area2D_body_entered(body):
+	print("lole")
+	if body.is_in_group("player"):
+		get_tree().change_scene("res://Scenes/2.tscn")
