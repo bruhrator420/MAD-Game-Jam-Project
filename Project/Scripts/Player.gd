@@ -24,8 +24,9 @@ func _physics_process(delta):
 		elif x_input:
 			motion.x = move_toward(motion.x, x_input * MAX_SPEED, ACCELERATION * delta)
 			sprite.flip_h = x_input < 0
+			sprite.play("walk")
 		else:
-			
+			sprite.play("default")
 			motion.x = lerp(motion.x, 0, FRICTION if is_on_floor() else AIR_RESISTANCE)
 	else:
 		motion.x = lerp(motion.x, 0, FRICTION if is_on_floor() else AIR_RESISTANCE)
@@ -43,7 +44,6 @@ func _physics_process(delta):
 
 
 func on_attack_animation_finished():
-	sprite.play("default")
 	melee.monitoring = false
 
 
