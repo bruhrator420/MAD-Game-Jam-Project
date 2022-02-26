@@ -10,15 +10,25 @@ const JUMP_FORCE = 275
 var motion = Vector2.ZERO
 
 onready var sprite = $Sprite
+onready var melee = $"Melee"
 
 func _physics_process(delta):
+	var kick = Input.is_action_just_pressed("attack")
 	var x_input = Input.get_axis("ui_left", "ui_right")
 	
-	if x_input:
-		motion.x = move_toward(motion.x, x_input * MAX_SPEED, ACCELERATION * delta)
-		sprite.flip_h = x_input < 0
+	if sprite.animation != "attack":
+		if kick:
+			sprite.play("attack")
+			melee.monitoring = true
+			sprite.connect("animation_finished", self, "on_attack_animation_finished", [], CONNECT_ONESHOT)
+		elif x_input:
+			motion.x = move_toward(motion.x, x_input * MAX_SPEED, ACCELERATION * delta)
+			sprite.flip_h = x_input < 0
+		else:
+			
+			motion.x = lerp(motion.x, 0, FRICTION if is_on_floor() else AIR_RESISTANCE)
 	else:
-		motion.x = lerp(motion.x, 0, FRICTION)
+		motion.x = lerp(motion.x, 0, FRICTION if is_on_floor() else AIR_RESISTANCE)
 	
 	motion.y += GRAVITY * delta
 	
@@ -30,3 +40,13 @@ func _physics_process(delta):
 			motion.y = -JUMP_FORCE/2
 	
 	motion = move_and_slide(motion, Vector2.UP)
+
+
+func on_attack_animation_finished():
+	sprite.play("default")
+	melee.monitoring = false
+
+
+func _on_Melee_body_entered(body):
+	if body.is_in_group("enemies"):
+		pass
