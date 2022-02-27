@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=2]
 
 [sub_resource type="SegmentShape2D" id=1]
+b = Vector2( 168.822, 0 )
 
 [node name="Fallzone" type="Area2D"]
 position = Vector2( 0, 301 )
