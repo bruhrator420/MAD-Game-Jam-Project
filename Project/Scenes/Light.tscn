@@ -15,9 +15,10 @@ func resume():
 	enabled = true
 "
 
-[node name="Light2D" type="Light2D"]
+[node name="Light2D" type="Light2D" groups=["night"]]
 texture = ExtResource( 2 )
 offset = Vector2( 0, 47.5 )
+range_layer_min = -1
 script = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]

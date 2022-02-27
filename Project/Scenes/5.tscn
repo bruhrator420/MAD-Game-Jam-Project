@@ -108,21 +108,17 @@ visible = false
 color = Color( 0.588235, 0.588235, 0.588235, 1 )
 script = SubResource( 4 )
 
-[node name="Light2D" parent="NightNode2D" groups=["night"] instance=ExtResource( 7 )]
+[node name="Light2D" parent="NightNode2D" instance=ExtResource( 7 )]
 position = Vector2( 86, 82 )
-range_layer_min = -1
 
-[node name="Light2D2" parent="NightNode2D" groups=["night"] instance=ExtResource( 7 )]
+[node name="Light2D2" parent="NightNode2D" instance=ExtResource( 7 )]
 position = Vector2( 213, 82 )
-range_layer_min = -1
 
-[node name="Light2D3" parent="NightNode2D" groups=["night"] instance=ExtResource( 7 )]
+[node name="Light2D3" parent="NightNode2D" instance=ExtResource( 7 )]
 position = Vector2( 1042, 82 )
-range_layer_min = -1
 
-[node name="Light2D4" parent="NightNode2D" groups=["night"] instance=ExtResource( 7 )]
+[node name="Light2D4" parent="NightNode2D" instance=ExtResource( 7 )]
 position = Vector2( 1158, 82 )
-range_layer_min = -1
 
 [node name="InsideSound" parent="NightNode2D" instance=ExtResource( 11 )]
 
