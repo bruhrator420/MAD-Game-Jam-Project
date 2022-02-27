@@ -1,5 +1,7 @@
 # De noite tudo muda
 
+![Title Picture](Project/Assets/Sprites/TitlePic.png)
+
 A game for the [2022 MAD Game Jam][1].
 Made in 48 hours, with the [Godot Engine][2], version 3.4.
 
