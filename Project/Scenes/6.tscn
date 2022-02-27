@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Gate.tscn" type="PackedScene" id=2]
@@ -10,8 +10,9 @@
 [ext_resource path="res://Scenes/Lasers.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Enemy.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Fallzone.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/Vault.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/InsideSound.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/MoneyBag.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Vault.tscn" type="PackedScene" id=13]
 
 [sub_resource type="GDScript" id=4]
 script/source = "extends CanvasModulate
@@ -78,7 +79,7 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 7, 40 )
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource( 5 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -235,7 +236,7 @@ scale = Vector2( 2.156, 1 )
 position = Vector2( 906, 233 )
 scale = Vector2( 1e-05, 1 )
 
-[node name="NightNode2D2" parent="." instance=ExtResource( 11 )]
+[node name="NightNode2D2" parent="." instance=ExtResource( 13 )]
 position = Vector2( 1695, 156 )
 
 [node name="MoneyBag" parent="." instance=ExtResource( 12 )]
