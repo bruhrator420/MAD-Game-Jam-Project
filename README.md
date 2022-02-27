@@ -6,6 +6,17 @@ Made in 48 hours, with the [Godot Engine][2].
 [1]: <https://linktr.ee/madgamejam>
 [2]: <https://godotengine.org>
 
+### Controls
+
+The game is controled with:
+
+- the arrow keys or the WASD keys to move
+- X to attack
+- Z to change between day and night
+- E to use stuff.
+
+### Credits
+
 The graphics and code were all made by us.  
 The code and graphics are licensed under the [MIT license][MIT].
 
