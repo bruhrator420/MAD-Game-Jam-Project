@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Sounds/DOPAMINE.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Assets/Sprites/Boombox.png" type="Texture" id=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Area2D
+
+
+func use():
+	$\"../AudioStreamPlayer\".play()
+"
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 3.5, 1.5 )
+
+[node name="Boombox" type="Sprite"]
+texture = ExtResource( 2 )
+
+[node name="Vat" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+monitoring = false
+script = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Vat"]
+position = Vector2( 1.5, -1.5 )
+shape = SubResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = 24.0
