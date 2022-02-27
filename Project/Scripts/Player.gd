@@ -7,6 +7,7 @@ const AIR_RESISTANCE = 0.02
 const JUMP_FORCE = 183.3
 
 var hp = 3
+var dead = false
 var motion = Vector2.ZERO
 var gravity = (ProjectSettings.get_setting("physics/2d/default_gravity") *
 		ProjectSettings.get_setting("physics/2d/default_gravity_vector"))
@@ -20,7 +21,7 @@ func _physics_process(delta):
 	var use = Input.is_action_just_pressed("use")
 	
 	var is_on_floor = is_on_floor()
-	if sprite.animation != "attack":
+	if sprite.animation != "attack" and not dead:
 		if kick and is_on_floor:
 			sprite.play("attack")
 			melee.monitoring = true
@@ -64,7 +65,12 @@ func damage(damage = 1, knockback = Vector2.ZERO):
 
 
 func die():
-	get_tree().paused = true
+	set_deferred("motion", Vector2(0, -200))
+	$"CollisionShape2D".set_deferred("disabled", true)
+	dead = true
+	modulate = Color(1, 0.3, 0.3, 0.3)
+	$"DeathTimer".start()
+	sprite.play("default")
 
 
 func on_attack_animation_finished():
@@ -75,3 +81,7 @@ func on_attack_animation_finished():
 func _on_Melee_body_entered(body):
 	if body.is_in_group("enemies"):
 		body.die()
+
+
+func _on_DeathTimer_timeout():
+		$"HUD/DeathScreen".show()

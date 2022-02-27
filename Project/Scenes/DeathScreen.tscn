@@ -1,0 +1,169 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Assets/Fonts/RussoOne/RussoOne-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Fonts/OpenSans/OpenSans-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scripts/DeathScreen.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 13
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.635294, 0.635294, 0.635294, 0.109804 )
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.466667, 0.466667, 0.466667, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.635294, 0.635294, 0.635294, 0.109804 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.466667, 0.466667, 0.466667, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.635294, 0.635294, 0.635294, 0.109804 )
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.466667, 0.466667, 0.466667, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.635294, 0.635294, 0.635294, 0.109804 )
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.466667, 0.466667, 0.466667, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+shadow_size = 1
+
+[sub_resource type="DynamicFont" id=2]
+size = 34
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.0980392, 0.0980392, 0.0980392, 1 )
+border_width_top = 22
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="Theme" id=9]
+Button/fonts/font = SubResource( 1 )
+Button/styles/focus = SubResource( 6 )
+Button/styles/hover = SubResource( 5 )
+Button/styles/normal = SubResource( 4 )
+Button/styles/pressed = SubResource( 7 )
+Label/fonts/font = SubResource( 2 )
+WindowDialog/constants/close_v_ofs = -3
+WindowDialog/constants/title_height = -20
+WindowDialog/fonts/title_font = SubResource( 1 )
+WindowDialog/styles/panel = SubResource( 8 )
+
+[node name="DeathScreen" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 9 )
+color = Color( 0.435294, 0, 0, 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 300.0
+margin_bottom = 160.0
+custom_constants/separation = 8
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+margin_left = 47.0
+margin_right = 233.0
+margin_bottom = 42.0
+size_flags_horizontal = 4
+size_flags_vertical = 2
+text = "Game Over"
+align = 1
+
+[node name="Restart" type="Button" parent="MarginContainer/VBoxContainer"]
+margin_left = 117.0
+margin_top = 64.0
+margin_right = 162.0
+margin_bottom = 84.0
+size_flags_horizontal = 4
+text = "Restart"
+
+[node name="MainMenu" type="Button" parent="MarginContainer/VBoxContainer"]
+margin_left = 75.0
+margin_top = 92.0
+margin_right = 205.0
+margin_bottom = 112.0
+size_flags_horizontal = 4
+text = "Return to main menu"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+margin_left = 126.0
+margin_top = 120.0
+margin_right = 154.0
+margin_bottom = 140.0
+size_flags_horizontal = 4
+text = "Quit"
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 300.0
+margin_bottom = 160.0
+window_title = "Are you sure you want to quit?"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Restart" to="." method="_on_Restart_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MainMenu" to="." method="_on_MainMenu_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]

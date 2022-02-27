@@ -1,0 +1,171 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Assets/Sprites/Bank.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Sprites/Sky.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Fonts/RussoOne/RussoOne-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/Fonts/OpenSans/OpenSans-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Sprites/TitlePic.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.262745, 0.262745, 0.262745, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.72549, 0.72549, 0.72549, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 6.0
+expand_margin_right = 6.0
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.329412, 0.329412, 0.329412, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.72549, 0.72549, 0.72549, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 6.0
+expand_margin_right = 6.0
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.262745, 0.262745, 0.262745, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.619608, 0.619608, 0.619608, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 6.0
+expand_margin_right = 6.0
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.262745, 0.262745, 0.262745, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.619608, 0.619608, 0.619608, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 6.0
+expand_margin_right = 6.0
+
+[sub_resource type="DynamicFont" id=2]
+size = 34
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.0980392, 0.0980392, 0.0980392, 1 )
+border_width_top = 22
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="Theme" id=9]
+Button/fonts/font = SubResource( 1 )
+Button/styles/focus = SubResource( 6 )
+Button/styles/hover = SubResource( 5 )
+Button/styles/normal = SubResource( 4 )
+Button/styles/pressed = SubResource( 7 )
+Label/fonts/font = SubResource( 2 )
+WindowDialog/constants/close_v_ofs = -3
+WindowDialog/constants/title_height = -20
+WindowDialog/fonts/title_font = SubResource( 1 )
+WindowDialog/styles/panel = SubResource( 8 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 320, 180 )
+
+[sub_resource type="Theme" id=11]
+Button/fonts/font = SubResource( 1 )
+Button/styles/focus = SubResource( 6 )
+Button/styles/hover = SubResource( 5 )
+Button/styles/normal = SubResource( 4 )
+Button/styles/pressed = SubResource( 7 )
+
+[node name="TextureRect" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 9 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sky" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 10 )
+
+[node name="Bank" type="TextureRect" parent="Sky"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -157.0
+texture = ExtResource( 1 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Sky"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Sky/MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 300.0
+margin_bottom = 160.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitlePic" type="TextureRect" parent="Sky/MarginContainer/VBoxContainer"]
+margin_left = 8.0
+margin_right = 272.0
+margin_bottom = 74.0
+rect_min_size = Vector2( 264, 74 )
+size_flags_horizontal = 4
+size_flags_vertical = 2
+texture = ExtResource( 6 )
+expand = true
+
+[node name="Start" type="Button" parent="Sky/MarginContainer/VBoxContainer"]
+margin_left = 112.0
+margin_top = 91.0
+margin_right = 168.0
+margin_bottom = 127.0
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme = SubResource( 11 )
+text = "Start"
+
+[connection signal="pressed" from="Sky/MarginContainer/VBoxContainer/Start" to="." method="_on_Start_pressed"]
