@@ -116,39 +116,45 @@ script = SubResource( 4 )
 [node name="Light2D" parent="NightNode2D" groups=["night"] instance=ExtResource( 7 )]
 position = Vector2( 86, 82 )
 range_layer_min = -1
-script = SubResource( 5 )
 
 [node name="Light2D2" parent="NightNode2D" groups=["night"] instance=ExtResource( 7 )]
 position = Vector2( 258, 82 )
 range_layer_min = -1
-script = SubResource( 5 )
 
 [node name="Light2D4" parent="NightNode2D" groups=["night"] instance=ExtResource( 7 )]
 position = Vector2( 504, 82 )
 range_layer_min = -1
-script = SubResource( 5 )
 
 [node name="Light2D5" parent="NightNode2D" groups=["night"] instance=ExtResource( 7 )]
 position = Vector2( 644, 82 )
 range_layer_min = -1
-script = SubResource( 5 )
 
 [node name="Light2D6" parent="NightNode2D" groups=["night"] instance=ExtResource( 7 )]
 position = Vector2( 803, 1138 )
 range_layer_min = -1
-script = SubResource( 5 )
 
 [node name="Light2D7" parent="NightNode2D" groups=["night"] instance=ExtResource( 7 )]
 position = Vector2( 732.983, 873 )
 rotation = 1.5708
 scale = Vector2( 1, 1.66948 )
 range_layer_min = -1
-script = SubResource( 5 )
+
+[node name="Light2D8" parent="NightNode2D" groups=["night"] instance=ExtResource( 7 )]
+position = Vector2( 579.013, 733 )
+rotation = -1.5708
+scale = Vector2( 1, 1.67359 )
+range_layer_min = -1
 
 [node name="Light2D9" parent="NightNode2D" groups=["night"] instance=ExtResource( 7 )]
 position = Vector2( 732.983, 546 )
 rotation = 1.5708
 scale = Vector2( 1, 1.66948 )
+range_layer_min = -1
+
+[node name="Light2D10" parent="NightNode2D" groups=["night"] instance=ExtResource( 7 )]
+position = Vector2( 579.013, 388 )
+rotation = -1.5708
+scale = Vector2( 1, 1.67359 )
 range_layer_min = -1
 script = SubResource( 5 )
 
@@ -157,21 +163,6 @@ position = Vector2( 732.983, 238 )
 rotation = 1.5708
 scale = Vector2( 1, 1.66948 )
 range_layer_min = -1
-script = SubResource( 5 )
-
-[node name="Light2D8" parent="NightNode2D" groups=["night"] instance=ExtResource( 7 )]
-position = Vector2( 579.013, 733 )
-rotation = -1.5708
-scale = Vector2( 1, 1.67359 )
-range_layer_min = -1
-script = SubResource( 5 )
-
-[node name="Light2D10" parent="NightNode2D" groups=["night"] instance=ExtResource( 7 )]
-position = Vector2( 579.013, 388 )
-rotation = -1.5708
-scale = Vector2( 1, 1.67359 )
-range_layer_min = -1
-script = SubResource( 5 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 2 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Gate.tscn" type="PackedScene" id=2]
@@ -20,18 +20,6 @@ func pause():
 
 func resume():
 	show()
-"
-
-[sub_resource type="GDScript" id=5]
-script/source = "extends Light2D
-
-
-func pause():
-	enabled = false
-
-
-func resume():
-	enabled = true
 "
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
@@ -116,22 +104,18 @@ script = SubResource( 4 )
 [node name="Light2D" parent="NightNode2D" groups=["night"] instance=ExtResource( 7 )]
 position = Vector2( 86, 82 )
 range_layer_min = -1
-script = SubResource( 5 )
 
 [node name="Light2D2" parent="NightNode2D" groups=["night"] instance=ExtResource( 7 )]
 position = Vector2( 213, 82 )
 range_layer_min = -1
-script = SubResource( 5 )
 
 [node name="Light2D3" parent="NightNode2D" groups=["night"] instance=ExtResource( 7 )]
 position = Vector2( 1042, 82 )
 range_layer_min = -1
-script = SubResource( 5 )
 
 [node name="Light2D4" parent="NightNode2D" groups=["night"] instance=ExtResource( 7 )]
 position = Vector2( 1158, 82 )
 range_layer_min = -1
-script = SubResource( 5 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
