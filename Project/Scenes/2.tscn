@@ -282,4 +282,4 @@ position = Vector2( 464, 159 )
 position = Vector2( 873, 1183 )
 shape = SubResource( 6 )
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered" binds= [ "res://Scenes/3.tscn" ]]
