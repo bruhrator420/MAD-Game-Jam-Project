@@ -191,7 +191,7 @@ position = Vector2( 1695, 156 )
 position = Vector2( 1776, 155 )
 
 [node name="Boombox" parent="." instance=ExtResource( 14 )]
-position = Vector2( 1566, 164 )
+position = Vector2( 1625, 164 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 18, 136 )
