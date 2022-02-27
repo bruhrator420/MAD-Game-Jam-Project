@@ -26,7 +26,7 @@ func _on_Area2D_body_entered(body):
 "
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 4, 31.5 )
+extents = Vector2( 2, 31.5 )
 
 [node name="Lasers" type="Node2D"]
 script = ExtResource( 2 )

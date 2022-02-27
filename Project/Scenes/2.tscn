@@ -218,7 +218,7 @@ rotation = -1.5708
 scale = Vector2( 1, 1.251 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 31, 129 )
+position = Vector2( 31, 144 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true

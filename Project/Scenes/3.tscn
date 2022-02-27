@@ -140,12 +140,7 @@ range_layer_min = -1
 script = SubResource( 5 )
 
 [node name="Light2D6" parent="NightNode2D" groups=["night"] instance=ExtResource( 7 )]
-position = Vector2( 1346, 98 )
-range_layer_min = -1
-script = SubResource( 5 )
-
-[node name="Light2D7" parent="NightNode2D" groups=["night"] instance=ExtResource( 7 )]
-position = Vector2( 1455, 98 )
+position = Vector2( 1393, 98 )
 range_layer_min = -1
 script = SubResource( 5 )
 
@@ -223,6 +218,10 @@ scale = Vector2( 1, 1.275 )
 
 [node name="Lasers3" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1088, 136.8 )
+scale = Vector2( 1, 1.275 )
+
+[node name="Lasers4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1327, 136.8 )
 scale = Vector2( 1, 1.275 )
 
 [node name="Enemy" parent="." instance=ExtResource( 9 )]
