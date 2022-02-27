@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends AudioStreamPlayer
+
+
+var day_ogg = preload(\"res://Assets/Sounds/InsideDay.ogg\")
+var night_ogg  = preload(\"res://Assets/Sounds/InsideNight.mp3\")
+var time
+
+
+func pause():
+	play_stream(night_ogg)
+
+
+func resume():
+	play_stream(day_ogg)
+
+
+func play_stream(stream):
+	time = get_playback_position()
+	self.stream = stream
+	play(time)
+"
+
+[node name="InsideSound" type="AudioStreamPlayer" groups=["day"]]
+script = SubResource( 1 )
