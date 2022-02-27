@@ -16,7 +16,8 @@ func _physics_process(delta):
 		direction *= -1
 		sprite.flip_h = not sprite.flip_h
 		motion.x = SPEED * direction
-		
+		floor_checker.position.x *= -1
+	
 	motion += gravity * delta
 	
 	motion = move_and_slide(motion, Vector2.UP)
