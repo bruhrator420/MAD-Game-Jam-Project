@@ -5,13 +5,21 @@ signal night(time)
 
 export(String, "day", "night") var time = "day"
 
+var transition_player = AudioStreamPlayer.new()
+var transition_audio = preload("res://Assets/Sounds/Transition.ogg")
 
 func _ready():
 	emit_signal("night", time)
+	add_child(transition_player)
+	transition_player.owner = self
+	transition_player.stream = transition_audio
+	transition_audio.loop = false
+	transition_player.volume_db = -20
 
 
 func _unhandled_input(event):
 	if event.is_action_pressed("night"):
+		transition_player.play(0.7)
 		time = "day" if time == "night" else "night"
 		emit_signal("night", time)
 		print(time)
