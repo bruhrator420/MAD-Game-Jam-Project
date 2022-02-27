@@ -28,9 +28,9 @@ Every audio track except Dopamine[^1] is licensed under a [Creative Commons 0][C
 
 [CC0-1.0]: <https://creativecommons.org/publicdomain/zero/1.0/legalcode>
 
-[Apache-2.0]: <https://www.apache.org/licenses/LICENSE-2.0>
+[Apache-2.0]: <Project/Assets/Fonts/OpenSans/LICENSE.txt>
 
-[OFL-1.1]: <./Project/Assets/Fonts/RussoOne/OFL.txt>
+[OFL-1.1]: </RussoOne/OFL.txt>
 
 [MIT]: <LICENSE>
 
