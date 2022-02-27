@@ -96,6 +96,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Fallzone" parent="." instance=ExtResource( 10 )]
+position = Vector2( 888, 241 )
+scale = Vector2( 406.628, 1 )
+
 [node name="NightNode2D" type="Node2D" parent="."]
 script = ExtResource( 6 )
 
@@ -196,7 +200,8 @@ position = Vector2( 18, 136 )
 current = true
 limit_left = 0
 limit_top = 46
-limit_right = 1107
+limit_right = 1868
+limit_bottom = 239
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 drag_margin_top = 0.84
@@ -228,20 +233,11 @@ position = Vector2( 826, 164 )
 position = Vector2( 722, -74 )
 shape = SubResource( 6 )
 
-[node name="Fallzone" parent="." instance=ExtResource( 10 )]
-position = Vector2( 319.112, 233 )
-scale = Vector2( 2.156, 1 )
-
-[node name="Fallzone2" parent="." instance=ExtResource( 10 )]
-position = Vector2( 906, 233 )
-scale = Vector2( 1e-05, 1 )
-
 [node name="NightNode2D2" parent="." instance=ExtResource( 13 )]
 position = Vector2( 1695, 156 )
 
 [node name="MoneyBag" parent="." instance=ExtResource( 12 )]
 position = Vector2( 1776, 155 )
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered" binds= [ "res://Scenes/2.tscn" ]]
 [connection signal="body_entered" from="Fallzone" to="." method="_on_Fallzone_body_entered"]
-[connection signal="body_entered" from="Fallzone2" to="." method="_on_Fallzone_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered" binds= [ "res://Scenes/2.tscn" ]]
