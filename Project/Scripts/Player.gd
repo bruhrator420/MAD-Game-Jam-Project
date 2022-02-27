@@ -4,7 +4,7 @@ const ACCELERATION  = 512
 const MAX_SPEED = 150
 const FRICTION = 0.25
 const AIR_RESISTANCE = 0.02
-const JUMP_FORCE = 275
+const JUMP_FORCE = 183.3
 
 var hp = 3
 var motion = Vector2.ZERO
