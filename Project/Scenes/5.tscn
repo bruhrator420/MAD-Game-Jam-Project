@@ -242,3 +242,5 @@ position = Vector2( 1336, 269 )
 scale = Vector2( 3.089, 1 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered" binds= [ "res://Scenes/6.tscn" ]]
+[connection signal="body_entered" from="Fallzone" to="." method="_on_Fallzone_body_entered"]
+[connection signal="body_entered" from="Fallzone2" to="." method="_on_Fallzone2_body_entered"]
