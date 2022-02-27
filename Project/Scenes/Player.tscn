@@ -49,9 +49,8 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 3.0
-height = 22.0
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 3, 12 )
 
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 4.5, 5 )
@@ -66,8 +65,8 @@ script = ExtResource( 2 )
 frames = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 2 )
-shape = SubResource( 1 )
+position = Vector2( 0, 4 )
+shape = SubResource( 24 )
 
 [node name="Melee" type="Area2D" parent="."]
 position = Vector2( 12, -3 )
