@@ -193,6 +193,11 @@ position = Vector2( 1106, 215 )
 rotation = -1.5708
 scale = Vector2( 1, 1.251 )
 
+[node name="Gate9" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1259, 136 )
+rotation = 3.14159
+scale = Vector2( 1, 1.251 )
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 18, 144 )
 
@@ -218,10 +223,6 @@ scale = Vector2( 1, 1.275 )
 
 [node name="Lasers3" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1088, 136.8 )
-scale = Vector2( 1, 1.275 )
-
-[node name="Lasers4" parent="." instance=ExtResource( 8 )]
-position = Vector2( 1257, 137 )
 scale = Vector2( 1, 1.275 )
 
 [node name="Enemy" parent="." instance=ExtResource( 9 )]
