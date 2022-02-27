@@ -185,10 +185,9 @@ position = Vector2( 18, 144 )
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
 limit_left = 0
-limit_top = 46
+limit_top = 54
 limit_right = 1516
 limit_bottom = 301
-drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 drag_margin_top = 0.84
 editor_draw_limits = true
@@ -220,8 +219,7 @@ position = Vector2( 1513, 144 )
 shape = SubResource( 6 )
 
 [node name="Fallzone" parent="." instance=ExtResource( 10 )]
-position = Vector2( 752, 304 )
-scale = Vector2( 400, 1 )
+position = Vector2( 0, 312 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered" binds= [ "res://Scenes/4.tscn" ]]
 [connection signal="body_entered" from="Fallzone" to="." method="_on_Fallzone_body_entered"]

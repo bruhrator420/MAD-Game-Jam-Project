@@ -33,7 +33,3 @@ func _on_Area2D_body_entered(body, scene_path):
 func _on_Fallzone_body_entered(body):
 	if body.is_in_group("players"):
 		body.die()
-
-
-func _on_Fallzone2_body_entered(body):
-	pass # Replace with function body.

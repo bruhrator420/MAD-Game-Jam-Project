@@ -76,7 +76,7 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 } ]
 1/z_index = 0
 
-[node name="Node2D2" type="Node2D"]
+[node name="Node2D" type="Node2D"]
 script = ExtResource( 5 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -85,17 +85,10 @@ layer = -1
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -2.0
-margin_right = 2569.0
-margin_bottom = 738.0
 color = Color( 0.298039, 0.298039, 0.298039, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Fallzone" parent="." instance=ExtResource( 10 )]
-position = Vector2( 200, 241 )
-scale = Vector2( 406.628, 1 )
 
 [node name="NightNode2D" type="Node2D" parent="."]
 script = ExtResource( 6 )
@@ -224,10 +217,13 @@ scale = Vector2( 1, 1.275 )
 [node name="Enemy" parent="." instance=ExtResource( 9 )]
 position = Vector2( 826, 164 )
 
-[node name="NightNode2D2" parent="." instance=ExtResource( 13 )]
+[node name="Vault" parent="." instance=ExtResource( 13 )]
 position = Vector2( 1695, 156 )
 
 [node name="MoneyBag" parent="." instance=ExtResource( 12 )]
 position = Vector2( 1776, 155 )
+
+[node name="Fallzone" parent="." instance=ExtResource( 10 )]
+position = Vector2( 0, 248 )
 
 [connection signal="body_entered" from="Fallzone" to="." method="_on_Fallzone_body_entered"]

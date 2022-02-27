@@ -1,10 +1,8 @@
 [gd_scene load_steps=2 format=2]
 
-[sub_resource type="SegmentShape2D" id=1]
-b = Vector2( 168.822, 0 )
+[sub_resource type="LineShape2D" id=1]
 
 [node name="Fallzone" type="Area2D"]
-position = Vector2( 0, 301 )
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
