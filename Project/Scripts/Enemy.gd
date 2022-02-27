@@ -17,6 +17,7 @@ func _physics_process(delta):
 		sprite.flip_h = not sprite.flip_h
 		motion.x = SPEED * direction
 		floor_checker.position.x *= -1
+		$"Area2D/CollisionShape2D".position.x *= -1
 	
 	motion += gravity * delta
 	
