@@ -20,3 +20,8 @@ func _unhandled_input(event):
 func _on_Area2D_body_entered(body, scene_path):
 	if body.is_in_group("players"):
 		get_tree().change_scene(scene_path)
+
+
+func _on_Fallzone_body_entered(body):
+	if body.is_in_group("players"):
+		body.die()
