@@ -217,12 +217,12 @@ position = Vector2( 1513, 144 )
 shape = SubResource( 6 )
 
 [node name="Fallzone" parent="." instance=ExtResource( 10 )]
-position = Vector2( 351, 234 )
-scale = Vector2( 1.47, 1 )
+position = Vector2( 192, 234 )
+scale = Vector2( 1.947, 1 )
 
 [node name="Fallzone2" parent="." instance=ExtResource( 10 )]
-position = Vector2( 1003, 251 )
-scale = Vector2( 2.907, 1 )
+position = Vector2( 756, 251 )
+scale = Vector2( 3.338, 1 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered" binds= [ "res://Scenes/4.tscn" ]]
 [connection signal="body_entered" from="Fallzone" to="." method="_on_Fallzone_body_entered"]

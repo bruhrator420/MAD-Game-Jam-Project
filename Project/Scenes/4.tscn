@@ -194,5 +194,10 @@ shape = SubResource( 6 )
 position = Vector2( 255, 235 )
 scale = Vector2( 1.392, 1 )
 
+[node name="CollisionShape2D" parent="Fallzone" index="0"]
+position = Vector2( -68.2471, 0 )
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered" binds= [ "res://Scenes/5.tscn" ]]
 [connection signal="body_entered" from="Fallzone" to="." method="_on_Fallzone_body_entered"]
+
+[editable path="Fallzone"]
