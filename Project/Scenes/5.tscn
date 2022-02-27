@@ -85,7 +85,7 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 1/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 7, 40 )
+extents = Vector2( 7, 48 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 5 )
@@ -235,13 +235,17 @@ scale = Vector2( 1, 1.275 )
 position = Vector2( 1416, 137 )
 scale = Vector2( 1, 1.275 )
 
+[node name="Lasers5" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1587, 121 )
+scale = Vector2( 1, 1.275 )
+
 [node name="Enemy" parent="." instance=ExtResource( 9 )]
 position = Vector2( 1069, 166 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 707, -31 )
+position = Vector2( 1730, 128 )
 shape = SubResource( 6 )
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered" binds= [ "res://Scenes/2.tscn" ]]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered" binds= [ "res://Scenes/6.tscn" ]]
