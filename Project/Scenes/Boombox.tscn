@@ -7,8 +7,16 @@
 script/source = "extends Area2D
 
 
+onready var audio_player = $\"../AudioStreamPlayer\"
+
+var time = 0
+
 func use():
-	$\"../AudioStreamPlayer\".play()
+	if audio_player.playing:
+		time = audio_player.get_playback_position()
+		audio_player.stop()
+	else:
+		audio_player.play(time)
 "
 
 [sub_resource type="RectangleShape2D" id=2]
